@@ -1,0 +1,85 @@
+<section class="w-[1440px] mx-auto bg-gradient-to-b from-red-50 to-white p-20">
+  <div class="flex flex-col gap-16">
+    <div class="w-[1280px] h-[240px] flex justify-between items-end">
+      <div class="w-[720px] flex flex-col gap-6 justify-between">
+        <div class="flex flex-col gap-2">
+          <h4 class="text-[16px] font-semibold text-[#EE5544]">History</h4>
+          <h2 class="text-[48px] font-bold text-gray-900 leading-[60px]">
+            30 Years of Advocacy: <br />
+            <span class="text-[#EE5544]">A Legacy of Healthcare Justice</span>
+          </h2>
+        </div>
+        <p class="mt-4 text-gray-600">
+          Founded in 1994, ABC for Health has spent 30 years fighting for
+          healthcare justice. From policy wins to individual victories, our
+          journey is filled with milestones that showcase our commitment to
+          ensuring access to care for all.
+        </p>
+      </div>
+      <div class="mt-6">
+        <a
+          href="#"
+          class="inline-flex items-center gap-2 bg-[#FFFFFF] text-[#EE5544] px-6 py-2 rounded-full font-medium transition"
+        >
+          <span> View full timeline </span>
+          <img
+            src="assets/arrow-up-right (1).svg"
+            class="h-[20px] w-[20px]"
+            alt=""
+          />
+        </a>
+      </div>
+    </div>
+
+    <div class="relative h-[177px]">
+      <div class="top-0 w-full flex justify-between text-sm text-gray-500">
+        <div
+          *ngFor="let item of timeline; let i = index; relative"
+          (click)="selectItem(i)"
+          class="flex flex-col cursor-pointer transition-all duration-300 w-[192px]"
+        >
+          <img src="assets/Frame 1948757225.svg" alt="Healthcare Support" />
+          <img
+            src="assets/Frame 1948757228.svg "
+            alt="Healthcare Support"
+            class="absolute mt-2"
+          />
+
+          <div class="flex flex-col gap-3 mt-1">
+            <p
+              class="font-normal text-[16px] mt-[30px] transition-colors duration-300 ml-2"
+              [ngClass]="
+                selectedIndex === i ? 'text-[#3D444F]' : 'text-[#929093]'
+              "
+            >
+              {{ item.year }}
+            </p>
+
+            <p
+              class="font-bold text-[20px] transition-colors duration-300 leading-[25px]"
+              [ngClass]="
+                selectedIndex === i ? 'text-[#EE5544]' : 'text-[#929093]'
+              "
+            >
+              {{ item.title }}
+            </p>
+            <p
+              class="transition-opacity duration-300 text-[#3D444F]"
+              [ngClass]="
+                selectedIndex === i
+                  ? 'opacity-100'
+                  : 'opacity-0 h-0 overflow-hidden'
+              "
+            >
+              {{ item.description }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <img src="assets/image 8.png" alt="History Image" />
+    </div>
+  </div>
+</section>
