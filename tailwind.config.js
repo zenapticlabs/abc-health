@@ -4,8 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Pontano Sans"', "sans-serif"],
-        passenger: ["Passenger Sans", "sans-serif"],
+        sans: ["Work Sans", "sans-serif"],
       },
     },
   },
