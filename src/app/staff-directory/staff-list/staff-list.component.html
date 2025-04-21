@@ -1,0 +1,70 @@
+<div class="w-[1440px] mx-auto bg-[#FEF3F2] p-20 flex flex-col mt-[-30px] gap-16 ">
+  
+<div class="flex flex-col gap-2">
+  <h4 class="text-[16px] font-semibold text-[#EE5544]">Staffs</h4>
+  <h2 class="text-[48px] font-semibold text-gray-900 leading-[60px]">
+    Staff Directory
+  </h2>
+</div>
+<div class="flex flex-col gap-8">
+  <div class="py-2 border-b border-b-[#FECFCA]">
+    <span class="text-[28px] font-semibold text-[#EE5544]">
+      ABC for Health
+    </span>
+  </div>
+  <div class="flex flex-wrap gap-6 justify-center w-[1290px] mx-auto">
+    <div
+      *ngFor="let staff of staffList"
+      class="relative w-[410px]  rounded-[12px] overflow-hidden group bg-white shadow-md"
+    >
+      <!-- Default View -->
+      <div class="w-full h-full">
+        <img
+          [src]="staff.image"
+          alt="{{ staff.name }}"
+          class="w-full h-[300px] object-cover"
+        />
+        <div class="p-4 bg-white">
+          <h3 class="font-semibold text-gray-800 text-[20px]">{{ staff.name }}</h3>
+          <p class="text-gray-600 text-[16px]">{{ staff.role }}</p>
+          <p class="text-gray-500 text-[16px]">{{ staff.phone }}</p>
+        </div>
+      </div>
+  
+      <!-- Hover Overlay -->
+      <div
+        class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
+      >
+        <!-- Blurred Background Image -->
+        <img
+          [src]="staff.image"
+          alt="{{ staff.name }}"
+          class="absolute inset-0 w-full h-full object-cover blur-sm z-0"
+        />
+  
+        <!-- Color Overlay Layer -->
+        <div
+          class="absolute inset-0 bg-[#FEF3F2E5] z-10"
+        ></div>
+  
+        <!-- Content Layer -->
+        <div class="relative z-20 p-4 h-full overflow-y-auto scroll-custom">
+          <h3 class="font-semibold text-gray-800 text-[20px] mb-1">
+            {{ staff.name }}
+          </h3>
+          <p class="text-gray-600 text-[16px]">{{ staff.role }}</p>
+          <p class="text-gray-500 text-[16px] mb-2">{{ staff.phone }}</p>
+          <p class="text-gray-700 text-[15px] leading-snug">
+            {{ staff.description }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+</div>
+
+  
+</div>
