@@ -1,0 +1,81 @@
+<div
+  class="h-[510px] relative bg-cover bg-center w-[1440px] mx-auto"
+  style="background-image: url('assets/732ae0e21ab8ebf4c26d9ade3c40f3ba.jpeg');"
+>
+  <div
+    class="absolute bottom-0 left-0 right-0 h-[70%] pointer-events-none"
+    style="background: linear-gradient(to top, rgba(201, 29, 10, 0.4), rgba(201, 29, 10, 0));"
+  ></div>
+
+  <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 mt-[300px]">
+    <p class="text-[16px]  mb-2">History</p>
+    <h1 class="text-[48px]  font-medium leading-tight">
+      30 Years of Advocacy:<br />
+      A Legacy of Healthcare Justice
+    </h1>
+  </div>
+</div>
+
+
+
+
+<div class="w-[1440px] mx-auto p-20 " style="background: linear-gradient(180deg, #FEF3F2 0%, #FFFFFF 70%);">
+    <div class="w-[1440px] mx-auto">
+        <p class="text-[16px] text-[#EE5544] mb-1 mt-3">History</p>
+        <h1 class="text-[48px] font-medium leading-tight">
+            History of ABC for Health
+        </h1>
+    
+    </div>
+
+      <div
+        #scrollContainer
+        class="overflow-x-auto whitespace-nowrap scroll-smooth px-4 w-[1280px]"
+        (wheel)="onWheel($event)"
+      >
+        <div
+          *ngFor="let item of timelineData"
+          [id]="item.id"
+          class="inline-block align-top w-[1280px] mx-4 rounded p-4"
+        >
+          <img [src]="item.image" alt="{{ item.title }}" class="w-[1280px] h-[307px] mb-3" />
+          <div class="text-[28px] text-[#3D444F] font-semibold bg-[#FEF3F2] w-[160px] px-1">{{ item.years }}</div>
+          <h4 class="text-[40px] font-medium text-[#EE5544]">{{ item.title }}</h4>
+          <div class="max-w-[1280px] w-full mx-auto">
+            <ul class="list-disc ml-4 text-[16px] text-[#3D444F] mt-2 w-full">
+              <li *ngFor="let point of item.points" class="mb-2 whitespace-normal">
+                {{ point }}
+              </li>
+            </ul>
+          </div>
+                 
+        </div>
+      </div>
+      <div class="timeline-nav relative h-[177px] px-4 relative">
+        <div class="absolute h-[20px] w-[1280px] bg-white mt-[-257px] ml-[-10px]">
+
+
+        </div>
+        <div class="flex justify-between text-sm text-gray-500 overflow-x-auto no-scrollbar w-[1280px]">
+          <div
+            *ngFor="let item of timelineData; let i = index"
+            (click)="scrollTo(item.id, i)"
+            class="flex-shrink-0 flex flex-col cursor-pointer transition-all duration-300 w-[252px] relative"
+          >
+            <img src="assets/Frame 1948757225.svg" alt="Dot Inactive" />
+            <img src="assets/Frame 1948757228.svg" alt="Dot Active" class="absolute mt-2" />
+            <div class="flex flex-col gap-3 mt-1">
+              <p
+              class="font-normal text-[16px] mt-[30px] transition-colors duration-300  w-[90px]"
+              [ngClass]="selectedIndex === i ? 'text-[#EE5544] bg-[#FEF3F2]' : 'text-[#929093]'"
+            >
+              {{ item.years }}
+            </p>            
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</div>
+ 
+  

@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { HealthcareAccessComponent } from '../healthcare-access/healthcare-access.component';
 
 @Component({
-  selector: 'app-main-hero-section',
+  selector: 'app-hero-section',
   standalone: true,
-  imports: [HealthcareAccessComponent],
+  imports: [],
   templateUrl: './hero-section.component.html',
   styleUrl: './hero-section.component.css'
 })

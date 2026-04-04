@@ -15,11 +15,6 @@ import { FooterComponent } from './components/footer/footer.component';
   imports: [
     RouterOutlet,
     NavbarComponent,
-    HeroSectionComponent,
-    HealthcareAccessComponent,
-    HistorySectionComponent,
-    ProjectSectionComponent,
-    VideoReportsComponent,
     StayInformedComponent,
     FooterComponent,
   ],
